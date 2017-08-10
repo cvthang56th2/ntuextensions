@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PageFontStyle</title>
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="popup.js"></script>
+  <script src="jscolor.min.js"></script>
+  <style>
+    body {
+      min-height: 150px;
+      min-width: 250px;
+      text-align: center;
+    }
+    
+    input {
+      background-color: #337AB7;
+      border: none;
+      font-size: 15px;
+      color: white;
+      padding: 10px;
+    }
+    
+    input[type="submit"] {
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    ul {
+      padding: 0;
+    }
+    
+    li {
+      display: inline-block;
+      margin-top: 10px;
+      list-style-type: none;
+    }
+    
+    h1 {
+      color: #2db2ff;
+    }
+    
+    p span {
+      font-weight: bold;
+      font-size: 14px;
+      color: #2db2ff;
+      cursor: pointer;
+    }
+    
+    #guild:visited {
+      color: #2db2ff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><img src="iconNTU.png" alt="" width="30px;"> NTU Extension</h1>
+  <hr>
+  <p>Công cụ hỗ trợ sinh viên Đại Học Nha Trang</p>
+  <p>Trang web <span id="linkDaoTao">Đào tạo</span> của trường</p>
+  <ul>
+    <li><input type="submit" id="btnKiemTra" value="Điểm từng học kỳ" /></li>
+    <li><input type="submit" id="btnDiemTong" value="Điểm tổng kết" /></li>
+  </ul>
+  <a href="options.html" target="_blank" id="guild">Hướng dẫn sử dụng</a>
+
+
+  <!-- <input type="submit" id="btnDiemTBHK" value="Điểm Trung bình học kỳ" /> -->
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>NTU Extension Options</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="options.js"></script>
+  <style>
+    #wrap-content {
+      padding-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <head>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> NTU Extention</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Các trang Web của trường<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://ntu.edu.vn" target="_blank">Trang chủ</a></li>
+                <li><a href="http://daotao.ntu.edu.vn" target="_blank">Đào tạo</a></li>
+                <li><a href="http://thuvien.ntu.edu.vn" target="_blank">Thư viện</a></li>
+                <li><a href="http://elearning.ntu.edu.vn" target="_blank">Elearning</a></li>
+                <li><a href="http://ntucoder.net" target="_blank">Lập trình</a></li>
+                <li><a href="#">...</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Facebook NTU<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.facebook.com/nhatranguniversity/" target="_blank">Trường Đại học Nha Trang</a></li>
+                <li><a href="https://www.facebook.com/dtn.dhnt/" target="_blank">Đoàn Thanh niên</a></li>
+                <li><a href="https://www.facebook.com/ntu.it.volunteer" target="_blank">Đội tình nguyện Khoa CNTT</a></li>
+                <li><a href="https://www.facebook.com/ntucfs/" target="_blank">NTU confessions</a></li>
+                <li><a href="https://www.facebook.com/svntu.socute/" target="_blank">NTU SoCute</a></li>
+                <li><a href="#">...</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </head>
+
+
+  <div class="container" id="wrap-content">
+    <div class="col-sm-4">
+      <h3 class="text-center">CÁC TÍNH NĂNG</h3>
+      <p>1. Tự động điền MSSV và tự động đăng nhập (tùy chọn)</p>
+      <p>2. Xem kết quả từng môn học và điểm trung bình từng học kỳ</p>
+      <p>3. Xem điểm trung bình tổng kết từ học kỳ đầu tiên tới thời điểm hiện tại</p>
+      <p>Link video hướng dẫn cài đặt và sử dụng:</p>
+      <iframe width="100%" height="250" src="https://www.youtube.com/embed/r2ISnNLjEoo" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="col-sm-4">
+      <h3 class="text-center">CÀI ĐẶT</h3>
+      <div class="panel panel-primary">
+        <div class="panel-heading">NTU Options</div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <!-- <div class="col-sm-2"></div> -->
+
+              <div class="col-sm-12">
+                <label for="mssv">Mã sinh viên:</label>
+                <input type="number" class="form-control" id="mssv" placeholder="Nhập mã sinh viên">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="checkbox">
+                  <label><input type="checkbox" id="chk_autologin"> Đăng nhập tự động</label>
+
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input type="submit" class="btn btn-primary" id="savemssv" value="Lưu thiết lập">
+                <input type="submit" class="btn btn-primary" id="clearAll" value="Xóa tất cả">
+                <a href="http://daotao.ntu.edu.vn" target="_blank" class="btn btn-primary">Web Đào tạo</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="panel-footer">Version 1.0</div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h3 class="text-center">VỀ CHÚNG TÔI</h3>
+      Tiện ích này được viết ra với mục đích giúp cho sinh viên trường Đại học Nha Trang quản lý công việc, học tập tốt hơn. Các tính năng sẽ được cập nhật thêm.
+      <p>Được viết bởi Song Thắng và Kiên - Khoa Công nghệ Thông tin</p>
+      <p>Mọi feedback xin liên hệ: </p>
+      <div class="row">
+        <div class="col-sm-4 text-center">
+          <a href="https://www.facebook.com/cvthang56th2">
+            <img src="cvthang1.jpg" alt="" class="img-responsive img-circle"> Cao Viết Thắng
+          </a>
+
+        </div>
+        <div class="col-sm-4 text-center">
+          <a href="https://www.facebook.com/tatthang96">
+            <img src="ttthang.jpg" alt="" class="img-responsive img-circle"> Trần Tất Thắng
+          </a>
+
+        </div>
+        <div class="col-sm-4 text-center">
+          <a href="https://www.facebook.com/trongkien.97">
+            <img src="ntkien.jpg" alt="" class="img-responsive img-circle"> Nguyễn Trọng Kiên
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</body>
+
+</html>
