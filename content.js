@@ -32,7 +32,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         // Các hàng chẳn
         var test1 = $('tbody > .rowold td:nth-child(9) > span');
         for (var i = 0; i < test1.length; i++) {
-          var dtk = $('tbody > .rowold:eq(' + i + ') > td:eq(8) > span').text();
+          var dtk = parseFloat($('tbody > .rowold:eq(' + i + ') > td:eq(8) > span').text());
           if (dtk >= 0 && dtk < 1.7) {
             $('tbody > .rowold:eq(' + i + ')').append('<td style=\"color: red; font-weight: bold; text-align: center\">Tạch</td>');
           } else if (dtk === 1.7) {
