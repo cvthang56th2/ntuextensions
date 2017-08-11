@@ -22,6 +22,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
           var dtk = parseFloat($('tbody > .roweven:eq(' + i + ') > td:eq(8) > span').text());
           if (dtk >= 0 && dtk < 1.7) {
             $('tbody > .roweven:eq(' + i + ')').append('<td style=\"color: red; font-weight: bold; text-align: center\">Tạch</td>');
+          } else if (dtk === 1.7) {
+            $('tbody > .roweven:eq(' + i + ')').append('<td style=\"color: #42f462; font-weight: bold; text-align: center\">Mém chết</td>');
           } else {
             $('tbody > .roweven:eq(' + i + ')').append('<td style=\"color: green; font-weight: bold; text-align: center\">Ngon</td>');
           }
@@ -33,6 +35,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
           var dtk = $('tbody > .rowold:eq(' + i + ') > td:eq(8) > span').text();
           if (dtk >= 0 && dtk < 1.7) {
             $('tbody > .rowold:eq(' + i + ')').append('<td style=\"color: red; font-weight: bold; text-align: center\">Tạch</td>');
+          } else if (dtk === 1.7) {
+            $('tbody > .rowold:eq(' + i + ')').append('<td style=\"color: #42f462; font-weight: bold; text-align: center\">Mém chết</td>');
           } else {
             $('tbody > .rowold:eq(' + i + ')').append('<td style=\"color: green; font-weight: bold; text-align: center\">Ngon</td>');
           }
