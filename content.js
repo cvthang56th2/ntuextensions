@@ -79,10 +79,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
           if (diemtbhk >= 0 && diemtbhk < 1) {
             xeploai = "Kém";
             iconXeploai = "<img src=\"http://icons.iconarchive.com/icons/rokey/popo-emotions/24/surrender-icon.png\" />";
-          } else if (diemtbhk >= 1 && diemtbhk < 1.7) {
+          } else if (diemtbhk >= 1 && diemtbhk < 2) {
             xeploai = "Yếu";
             iconXeploai = "<img src=\"http://icons.iconarchive.com/icons/rokey/popo-emotions/24/oh-icon.png\" />";
-          } else if (diemtbhk >= 1.7 && diemtbhk < 2.5) {
+          } else if (diemtbhk >= 2 && diemtbhk < 2.5) {
             xeploai = "Trung bình";
             iconXeploai = "<img src=\"http://icons.iconarchive.com/icons/rokey/popo-emotions/24/feel-good-icon.png\" />";
           } else if (diemtbhk >= 2.5 && diemtbhk < 3.2) {
@@ -134,9 +134,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     var xeploai = "";
     if (dtb >= 0 && dtb < 1) {
       xeploai = "Kém";
-    } else if (dtb >= 1 && dtb < 1.7) {
+    } else if (dtb >= 1 && dtb < 2) {
       xeploai = "Yếu";
-    } else if (dtb >= 1.7 && dtb < 2.5) {
+    } else if (dtb >= 2 && dtb < 2.5) {
       xeploai = "Trung bình";
     } else if (dtb >= 2.5 && dtb < 3.2) {
       xeploai = "Khá";
