@@ -113,7 +113,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         var diem_ = parseFloat(table.parent().find("tr:nth-child(" + i + ") td:nth-child(4) span").html()),
           tc_ = parseInt(table.parent().find("tr:nth-child(" + i + ") td:nth-child(3) span").html()),
           tc2_ = parseInt(table.parent().find("tr:nth-child(" + i + ") td:nth-child(3) span").html());
-
+        if (isNaN(diem_))
+          diem_ = 0;
+        if (isNaN(tc_))
+          tc_ = 0;
         diem_ >= 9 ? diem_ = 4 :
           diem_ >= 8.5 ? diem_ = 3.7 :
           diem_ >= 8 ? diem_ = 3.3 :
@@ -151,12 +154,58 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       "\n- Số tín chỉ bạn đã tích lũy được: " + tc +
       "\n- Số tín chỉ bạn đang nợ là: " + tc2 +
       "\nChúc bạn sớm ra trường! ahihi =)) \n\nCode by Song Thắng + Kiên :))!\n____________";
+
     var error = "Mời bạn chuyển sang tab Bảng điểm tổng hợp!";
-    if (isNaN(dtb)) {
+
+    if ($('center > h3').text() !== "BẢNG ĐIỂM TỔNG HỢP") {
       alert(error);
     } else {
       alert(str);
     }
+
+    // var n = $('#maincontent table tr').length;
+    // console.log(n);
+    // var mangTenMH = [];
+    // var mangDiem = [];
+    // var mangDiem4 = [];
+    // var mangTC = [];
+    // var soTCno = 0;
+    // for (var i = 1; i < n; i++) {
+    //   var tenMH = $('#maincontent table tr:eq(' + i + ') td:eq(1)>span').html().toString();
+    //   var tc = parseFloat($('#maincontent table tr:eq(' + i + ') td:eq(2)>span').html().toString());
+    //   var diem = parseFloat($('#maincontent table tr:eq(' + i + ') td:eq(3)>span').html().toString());
+    //   var diem4 = 0;
+    //   if (isNaN(parseFloat($('#maincontent table tr:eq(' + i + ') td:eq(2)>span').html().toString())))
+    //     diem = 0;
+    //   if (isNaN(parseFloat($('#maincontent table tr:eq(' + i + ') td:eq(3)>span').html().toString())))
+    //     diem = 0;
+    //   mangTenMH.push(tenMH);
+    //   mangTC.push(tc);
+    //   mangDiem.push(diem);
+    //   if (diem >= 9)
+    //     diem4 = 4;
+    //   else if (diem >= 8.5)
+    //     diem4 = 3.7;
+    //   else if (diem >= 8)
+    //     diem4 = 3.3;
+    //   else if (diem >= 7)
+    //     diem4 = 3;
+    //   else if (diem >= 6.5)
+    //     diem4 = 2.7;
+    //   else if (diem >= 6)
+    //     diem4 = 2.3;
+    //   else if (diem >= 5.5)
+    //     diem4 = 2;
+    //   else if (diem >= 5)
+    //     diem4 = 1.7;
+    //   else
+    //     soTCno += tc;
+    //   mangDiem4.push(diem4);
+    // }
+    // for (var i = 0; i < mangTenMH.length; i++) {
+    //   console.log(mangTenMH[i] + " " + mangTC[i] + " " + mangDiem[i] + " " + mangDiem4[i]);
+    // }
+    // console.log(soTCno);
   }
 
 });
