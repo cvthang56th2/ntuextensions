@@ -4,6 +4,7 @@ chrome.runtime.sendMessage({ todo: "showPageAction" });
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // Kiểm tra điểm linh tinh
   if (request.todo == "kiemtraDiem") {
+
     if ($('center > h3').text() === "BẢNG ĐIỂM CHI TIẾT CÁC MÔN HỌC") {
       // Chỉ hiện cột kết quả và cột điểm trung bình học kỳ lên 1 lần
       if ($('.headKetQua').length === 0) {
@@ -44,16 +45,33 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         }
 
         // Kiểm tra thi lại
-        var soHangBang1 = $('tbody:eq(2) tr').length;
-        for (var i = 1; i < soHangBang1; i++) {
-          var dtk = parseFloat($('tbody:eq(2) > tr:eq(' + i + ') > td:eq(8) > span').text());
-          var diemThiLai = $('tbody:eq(2) > tr:eq(' + i + ') > td:eq(6) > span').text();
+        var hk = $('table.rowheader tr td').html().toString();
+        var hkd = hk.substring(hk.length - 1, hk.length);
+        console.log(hkd);
+        if (hkd === "2" || hkd === "1") {
+          var soHangBang1 = $('tbody:eq(2) tr').length;
+          for (var i = 1; i < soHangBang1; i++) {
+            var dtk = parseFloat($('tbody:eq(2) > tr:eq(' + i + ') > td:eq(8) > span').text());
+            var diemThiLai = $('tbody:eq(2) > tr:eq(' + i + ') > td:eq(6) > span').text();
 
-          if (dtk >= 1.0 && dtk < 1.7) {
-            if (diemThiLai === " ")
-              $('tbody:eq(2) > tr:eq(' + i + ') > td:eq(9)').replaceWith('<span style=\"color: yellow; font-weight: bold; padding-left: 3px\">Còn hi vọng &#9733;</span>');
+            if (dtk >= 1.0 && dtk < 1.7) {
+              if (diemThiLai === " ")
+                $('tbody:eq(2) > tr:eq(' + i + ') > td:eq(9)').replaceWith('<span style=\"color: yellow; font-weight: bold; padding-left: 3px\">Còn hi vọng &#9733;</span>');
+            }
+          }
+        } else {
+          var soHangBang1 = $('tbody:eq(4) tr').length;
+          for (var i = 1; i < soHangBang1; i++) {
+            var dtk = parseFloat($('tbody:eq(4) > tr:eq(' + i + ') > td:eq(8) > span').text());
+            var diemThiLai = $('tbody:eq(4) > tr:eq(' + i + ') > td:eq(6) > span').text();
+
+            if (dtk >= 1.0 && dtk < 1.7) {
+              if (diemThiLai === " ")
+                $('tbody:eq(4) > tr:eq(' + i + ') > td:eq(9)').replaceWith('<span style=\"color: yellow; font-weight: bold; padding-left: 3px\">Còn hi vọng &#9733;</span>');
+            }
           }
         }
+
         // Tính điểm trung bình từng học kỳ
         var bang = $('tbody');
         for (var i = 2; i < bang.length; i = i + 2) {
